@@ -1,0 +1,62 @@
+---
+title: "Nivel 5: Ecosistema"
+description: Herramientas y Próximos Pasos. Maven, Git, Testing.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: El código no vive en el vacío. Aprende a construir, probar y mantener software profesional.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Gestión de dependencias con Maven o Gradle.
+*   ✅ Testing unitario con JUnit y Mockito.
+*   ✅ Git básico para control de versiones.
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["Código", "Herramientas", "Procesos"]} dataPoints={[10, 40, 50]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. Build Tools (Maven/Gradle) (CRUCIAL)</strong></summary>
+Estructura de proyecto estándar. Archivo `pom.xml` o `build.gradle`. Gestión de librerías externas.
+</details>
+
+<details>
+<summary><strong>2. Unit Testing (JUnit 5) (CRUCIAL)</strong></summary>
+Aserciones (`assertEquals`). Ciclo de vida (`@BeforeEach`). Test Driven Development (TDD) básico.
+</details>
+
+<details>
+<summary><strong>3. Git & GitHub (CRUCIAL)</strong></summary>
+Commit, Push, Pull, Branching básico. Subir tu portafolio.
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Proyecto Final" text="API de Gestión de Tareas (Consola o Web simple): Usa Maven, JUnit para tests, guarda datos en JSON, usa Java moderno. Súbelo a GitHub con un README decente." />
+<PracticeItem type="Siguiente Paso" text="Una vez domines esto, salta a Spring Boot o Bases de Datos (JDBC/Hibernate)." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="JUnit 5 User Guide" icon="document">
+        [Documentación](https://junit.org/junit5/docs/current/user-guide/)
+    </Card>
+    <Card title="Git Book" icon="book">
+        [Libro Gratis](https://git-scm.com/book/en/v2)
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+Un portafolio con 2 proyectos bien testeados y documentados vale más que 20 scripts sueltos sin terminar.
+:::

@@ -1,0 +1,20 @@
+:root {
+  /* Java Orange Theme */
+  --sl-color-accent-low: #ffedd5;  /* orange-100 */
+  --sl-color-accent: #f97316;      /* orange-500 */
+  --sl-color-accent-high: #c2410c; /* orange-700 */
+  
+  /* Background Tweaks (Optional - Starlight is dark mode first usually) */
+  /* For now we keep Starlight defaults but inject the orange accent */
+}
+
+/* Light mode overrides if needed, Starlight handles this via data-theme */
+[data-theme='light'] {
+  --sl-color-accent-low: #fff7ed; /* orange-50 */
+  --sl-color-accent: #ea580c;     /* orange-600 */
+  --sl-color-accent-high: #9a3412; /* orange-800 */
+}
+
+/* Custom utility for the project */
+.text-orange-500 { color: #f97316; }
+.bg-slate-900 { background-color: #0f172a; }

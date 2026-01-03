@@ -1,0 +1,67 @@
+---
+title: "Nivel 4: Java Moderno"
+description: Java 8 hasta Java 21+. Programación Funcional.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: La programación funcional llega a Java. Código más limpio, conciso y potente. Esto separa a los juniors de los mid-level.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Programación Funcional (Lambdas, Streams).
+*   ✅ Uso de Optional para evitar NullPointerException.
+*   ✅ Características nuevas: Records, Switch Expressions, Var.
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["Nueva Sintaxis", "Refactorización", "Teoría"]} dataPoints={[50, 40, 10]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. Lambdas e Interfaces Funcionales (CRUCIAL)</strong></summary>
+Sintaxis de flecha `->`. Interfaces Predicate, Consumer, Supplier, Function. `@FunctionalInterface`.
+</details>
+
+<details>
+<summary><strong>2. Stream API (CRUCIAL)</strong></summary>
+Operaciones intermedias (filter, map, sorted) y terminales (collect, reduce, forEach). Procesamiento declarativo de colecciones.
+</details>
+
+<details>
+<summary><strong>3. Optional (CRUCIAL)</strong></summary>
+El fin de `if (obj != null)`. Métodos `orElse`, `ifPresent`, `map`.
+</details>
+
+<details>
+<summary><strong>4. Novedades Java 14-21</strong></summary>
+Records (DTOs inmutables en 1 línea), Pattern Matching para instanceof, Text Blocks.
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Refactor" text="Toma el proyecto 'Analizador de Texto' del Nivel 3 y reescríbelo usando Streams y Lambdas. Intenta eliminar bucles for explícitos." />
+<PracticeItem type="Ejercicio" text="Filtra una lista de Empleados: Encuentra los que ganan > 2000, incrementa su salario 10% y agrúpalos por departamento." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="Java 8 in Action" icon="book">
+        Libro recomendado.
+    </Card>
+    <Card title="Baeldung" icon="document">
+        [Ir a Web](https://www.baeldung.com/)
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+No abuses de los Streams. Si el stream es ilegible o muy complejo, un bucle `for` tradicional sigue siendo válido y a veces más rápido.
+:::

@@ -1,0 +1,73 @@
+---
+title: "Nivel 1: Fundamentos del Lenguaje"
+description: La sintaxis y el control de flujo. Memoria muscular.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: Dominar los bloques de construcción. Aquí construimos la memoria muscular para escribir código Java válido.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Dominar los tipos de datos primitivos y operadores.
+*   ✅ Controlar el flujo del programa con soltura.
+*   ✅ Entender el Scope (alcance) de las variables.
+*   ✅ Introducción a Arrays y Strings.
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["Sintaxis & Reglas", "Resolución Problemas", "Teoría"]} dataPoints={[60, 30, 10]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. Variables y Tipos de Datos (CRUCIAL)</strong></summary>
+Primitivos (int, double, boolean, char) vs Referencias. Casting implícito y explícito. El sistema de tipos fuerte de Java.
+</details>
+
+<details>
+<summary><strong>2. Operadores y Control de Flujo (CRUCIAL)</strong></summary>
+Aritméticos, lógicos, relacionales. If/Else, Switch (y el nuevo Switch expression), Loops (For, While, Do-While, For-Each).
+</details>
+
+<details>
+<summary><strong>3. Arrays y Strings (CRUCIAL)</strong></summary>
+Declaración e inicialización de arreglos. String Pool, inmutabilidad de Strings (CRUCIAL para entrevistas). StringBuilder.
+</details>
+
+<details>
+<summary><strong>4. Métodos</strong></summary>
+Declaración, parámetros, tipo de retorno, paso por valor (Pass-by-value).
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Ejercicio" text="Calculadora de IMC: Recibe peso/altura y devuelve estado de salud." />
+<PracticeItem type="Algoritmo" text="Encontrar el número mayor en un Array sin usar librerías." />
+<PracticeItem type="Reto" text="Crear un menú interactivo en consola usando do-while y switch." />
+<PracticeItem type="Plataforma" text="CodingBat Java (Sección Warmup-1 y Logic-1)." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="Oracle Java Tutorials" icon="document">
+        [Ir a Web](https://docs.oracle.com/javase/tutorial/)
+    </Card>
+    <Card title="CodingBat" icon="puzzle">
+        [Ir a Web](https://codingbat.com/java)
+    </Card>
+     <Card title="Curso MOOC.fi (Top)" icon="star">
+        [Ir a Web](https://java-programming.mooc.fi/)
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+Explícale a un patito de goma (Rubber Duck Debugging) cómo funciona un bucle for. Si no puedes explicarlo paso a paso, no lo entiendes.
+:::

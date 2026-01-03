@@ -1,0 +1,14 @@
+
+> roadmap-course@0.0.1 build
+> astro build
+
+[2m11:49:30[22m [34m[content][39m Syncing content
+bad indentation of a mapping entry
+  Location:
+    C:\Users\Personal\Documents\PROGRAMACION\Roadmap-JAVA\roadmap-course\src\content\docs\00-nivel-zero\index.mdx:2:14
+  Stack trace:
+    at generateError (file:///C:/Users/Personal/Documents/PROGRAMACION/Roadmap-JAVA/roadmap-course/node_modules/js-yaml/dist/js-yaml.mjs:1289:10)
+    at readBlockMapping (file:///C:/Users/Personal/Documents/PROGRAMACION/Roadmap-JAVA/roadmap-course/node_modules/js-yaml/dist/js-yaml.mjs:2278:7)
+    at readDocument (file:///C:/Users/Personal/Documents/PROGRAMACION/Roadmap-JAVA/roadmap-course/node_modules/js-yaml/dist/js-yaml.mjs:2721:3)
+    at load$1 (file:///C:/Users/Personal/Documents/PROGRAMACION/Roadmap-JAVA/roadmap-course/node_modules/js-yaml/dist/js-yaml.mjs:2810:19)
+    at safeParseFrontmatter (file:///C:/Users/Personal/Documents/PROGRAMACION/Roadmap-JAVA/roadmap-course/node_modules/@astrojs/mdx/dist/utils.js:33:12)

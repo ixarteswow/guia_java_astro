@@ -1,0 +1,23 @@
+---
+const { type, text } = Astro.props;
+
+let borderColor = 'border-slate-200';
+let bgColor = 'bg-slate-50';
+let textColor = 'text-slate-800';
+let badgeColor = 'text-slate-600';
+
+if (type === 'Reto' || type === 'Proyecto') {
+    borderColor = 'border-orange-200';
+    bgColor = 'bg-orange-50';
+    badgeColor = 'text-orange-700';
+} else if (type === 'Config' || type === 'Ejercicio') {
+    borderColor = 'border-green-200';
+    bgColor = 'bg-green-50';
+    badgeColor = 'text-green-700';
+}
+---
+
+<div class={`p-4 rounded-lg border ${borderColor} ${bgColor} mb-3`}>
+    <span class={`text-xs font-bold uppercase mb-1 block ${badgeColor}`}>{type}</span>
+    <p class={`text-sm ${textColor}`}>{text}</p>
+</div>

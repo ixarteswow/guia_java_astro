@@ -1,0 +1,68 @@
+---
+title: "Nivel 2: POO (El Corazón de Java)"
+description: Programación Orientada a Objetos. Encapsulamiento, Herencia, Polimorfismo.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: El punto de inflexión. Java ES objetos. Si no entiendes esto, no sabes Java. Dedica la mayor parte de tu energía aquí.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Pensar en objetos, no en procedimientos.
+*   ✅ Dominar los 4 pilares: Encapsulamiento, Abstracción, Herencia, Polimorfismo.
+*   ✅ Entender Constructores, 'this', 'super' y modificadores de acceso.
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica Código", "Diseño Conceptual"]} dataPoints={[20, 30, 50]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. Clases y Objetos (CRUCIAL)</strong></summary>
+Diferencia entre Clase (plano) y Objeto (instancia). Miembros de instancia vs estáticos (`static` es peligroso, úsalo con cuidado).
+</details>
+
+<details>
+<summary><strong>2. Encapsulamiento (CRUCIAL)</strong></summary>
+Modificadores (private, protected, public, default). Getters y Setters. Ocultamiento de información.
+</details>
+
+<details>
+<summary><strong>3. Herencia y Polimorfismo (CRUCIAL)</strong></summary>
+Extends. Overriding vs Overloading. El principio de sustitución de Liskov (conceptual). Casting de objetos.
+</details>
+
+<details>
+<summary><strong>4. Abstracción e Interfaces (CRUCIAL)</strong></summary>
+Clases abstractas vs Interfaces. La palabra clave `implements`. Herencia múltiple de tipos.
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Proyecto" text="Sistema de Gestión de Biblioteca: Clases Libro, Usuario, Prestamo. Usa herencia para tipos de materiales (Libro, Revista, DVD)." />
+<PracticeItem type="Refactor" text="Toma tu código del Nivel 1 y refactorízalo usando objetos." />
+<PracticeItem type="Diseño" text="Modela un juego de RPG simple: Clase Personaje, subclases Mago/Guerrero, interfaz Atacante." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="Head First Java" icon="book">
+        Libro: La Biblia visual.
+    </Card>
+    <Card title="MOOC.fi (Parte 2)" icon="star">
+        [Ir a Web](https://java-programming.mooc.fi/)
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+El Polimorfismo es difícil de visualizar. Dibuja diagramas UML simples antes de codificar. Pregúntate siempre: "¿Es un?" (Herencia) vs "¿Tiene un?" (Composición).
+:::

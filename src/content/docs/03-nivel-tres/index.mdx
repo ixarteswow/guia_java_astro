@@ -1,0 +1,67 @@
+---
+title: "Nivel 3: Core Java Avanzado"
+description: Herramientas Profesionales. Excepciones, Collections, Generics.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: Ya sabes crear objetos. Ahora aprende a gestionarlos, almacenarlos y manejar errores robustamente.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Manejo profesional de Excepciones.
+*   ✅ Dominio del Collections Framework.
+*   ✅ Entender Genéricos y manejo de archivos.
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["API Conocimiento", "Algoritmos/Estructuras", "Teoría"]} dataPoints={[30, 50, 20]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. Manejo de Excepciones (CRUCIAL)</strong></summary>
+Try-Catch-Finally. Checked vs Unchecked Exceptions. Crear excepciones personalizadas. Try-with-resources.
+</details>
+
+<details>
+<summary><strong>2. Collections Framework (CRUCIAL)</strong></summary>
+List (ArrayList vs LinkedList), Set (HashSet, TreeSet), Map (HashMap, TreeMap). ¿Cuándo usar cuál? Complejidad Big O básica.
+</details>
+
+<details>
+<summary><strong>3. Generics</strong></summary>
+Seguridad de tipos. `<T>`, `? extends`, `? super`. Evitar ClassCastException en runtime.
+</details>
+
+<details>
+<summary><strong>4. File I/O (NIO.2)</strong></summary>
+Leer y escribir archivos. Path, Files. Manejo de streams de datos.
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Proyecto" text="Analizador de Texto: Lee un archivo .txt grande, cuenta la frecuencia de cada palabra usando un HashMap y exporta el top 10 a un CSV." />
+<PracticeItem type="Reto" text="Implementa una 'ToDo List' que guarde las tareas en un archivo para que persistan al cerrar el programa." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="Effective Java" icon="book">
+        Joshua Bloch. Libro Avanzado.
+    </Card>
+    <Card title="HackerRank" icon="puzzle">
+        [Data Structures](https://www.hackerrank.com/domains/data-structures)
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+Aprende de memoria la jerarquía de Collections. En entrevistas te preguntarán: '¿Diferencia entre HashMap y HashTable?' o '¿Cuándo usar LinkedList?'.
+:::

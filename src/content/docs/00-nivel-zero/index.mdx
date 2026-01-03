@@ -1,0 +1,63 @@
+---
+title: "Nivel 0: Preparación & Mentalidad"
+description: Antes de escribir una línea de código. Configuración y mentalidad.
+---
+
+import PhaseChart from '../../../components/PhaseChart.jsx';
+import PracticeItem from '../../../components/PracticeItem.astro';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
+**Resumen**: Configura tu entorno y aprende a pensar como una máquina. Java es verboso y estricto; necesitas paciencia y orden.
+</div>
+
+## Objetivos de la Fase
+
+*   ✅ Entender cómo funciona la JVM, JRE y JDK.
+*   ✅ Configurar un entorno de desarrollo profesional.
+*   ✅ Comprender la lógica algorítmica básica (diagramas de flujo, pseudocódigo).
+
+<div class="my-8">
+    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica", "Conceptos/Config"]} dataPoints={[20, 30, 50]} />
+    <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
+</div>
+
+## Temas Principales
+
+<details>
+<summary><strong>1. ¿Cómo funciona Java?</strong></summary>
+Compilación vs Interpretación. Bytecode. El rol de la JVM (Java Virtual Machine) y por qué hace a Java 'Write Once, Run Anywhere'.
+</details>
+
+<details>
+<summary><strong>2. Instalación del Entorno</strong></summary>
+Instalar OpenJDK (versión 21 LTS recomendada). Configurar variables de entorno (JAVA_HOME, PATH). Instalación de IntelliJ IDEA Community (el estándar de la industria).
+</details>
+
+<details>
+<summary><strong>3. Pensamiento Algorítmico (CRUCIAL)</strong></summary>
+Variables, constantes, secuencias, decisiones y bucles en papel. No te saltes esto. Si no puedes resolverlo en papel, no podrás programarlo.
+</details>
+
+---
+
+## Práctica Obligatoria
+
+<PracticeItem type="Config" text="Instala Java 21 y verifica con `java -version` en terminal." />
+<PracticeItem type="Reto" text="Escribe en papel los pasos para hacer un café. Tradúcelo a un diagrama de flujo con decisiones (¿Hay azúcar?)." />
+<PracticeItem type="Hello World" text="Crea tu primer archivo .java, compílalo con `javac` y ejecútalo con `java` desde la consola (sin IDE aún)." />
+
+## Recursos
+
+<CardGrid>
+    <Card title="Roadmap.sh Java" icon="external">
+        [Ver Web](https://roadmap.sh/java)
+    </Card>
+    <Card title="IntelliJ IDEA" icon="laptop">
+        <LinkButton href="https://www.jetbrains.com/idea/download/" variant="secondary" icon="external">Descargar</LinkButton>
+    </Card>
+</CardGrid>
+
+:::tip[Consejo de Asimilación]
+Error común: Depender del botón 'Run' del IDE sin entender qué pasa detrás. Aprende a compilar desde la terminal al menos una vez.
+:::

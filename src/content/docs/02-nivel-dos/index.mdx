@@ -5,6 +5,7 @@ description: Programación Orientada a Objetos. Encapsulamiento, Herencia, Polim
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -18,9 +19,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Entender Constructores, 'this', 'super' y modificadores de acceso.
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica Código", "Diseño Conceptual"]} dataPoints={[20, 30, 50]} />
+    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica Código", "Diseño Conceptual"]} dataPoints={[20, 30, 50]} description="Distribución de esfuerzo en Nivel 2: 20% sintaxis, 30% práctica de código y 50% diseño conceptual." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={2} total={5} levelLabel="Nivel 2" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 5 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -46,6 +54,21 @@ Clases abstractas vs Interfaces. La palabra clave `implements`. Herencia múltip
 
 ---
 
+## Criterios de salida
+
+- Modelas un dominio simple con clases y objetos bien encapsulados.
+- Aplicas correctamente herencia, interfaces y composición según el caso.
+- Diferencias con claridad `overriding` y `overloading`.
+- Diseñas jerarquías simples sin romper principios básicos de diseño.
+
+## Autoevaluación rápida
+
+1. ¿Qué problema resuelve el encapsulamiento?
+2. ¿Cuándo conviene composición sobre herencia?
+3. Explica la diferencia entre clase abstracta e interfaz.
+4. ¿Qué hace `super` en constructores y métodos?
+5. Diseña 3 clases para un sistema de biblioteca y justifica relaciones.
+
 ## Práctica Obligatoria
 
 <PracticeItem type="Proyecto" text="Sistema de Gestión de Biblioteca: Clases Libro, Usuario, Prestamo. Usa herencia para tipos de materiales (Libro, Revista, DVD)." />
@@ -66,3 +89,8 @@ Clases abstractas vs Interfaces. La palabra clave `implements`. Herencia múltip
 :::tip[Consejo de Asimilación]
 El Polimorfismo es difícil de visualizar. Dibuja diagramas UML simples antes de codificar. Pregúntate siempre: "¿Es un?" (Herencia) vs "¿Tiene un?" (Composición).
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/03-nivel-tres/" variant="primary" icon="right-arrow">Continuar al Nivel 3: Core Avanzado</LinkButton>

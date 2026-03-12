@@ -1,0 +1,20 @@
+---
+interface Props {
+  current: number;
+  total: number;
+  levelLabel: string;
+}
+
+const { current, total, levelLabel } = Astro.props;
+const percent = Math.round((current / total) * 100);
+---
+
+<div class="my-6 rounded-lg border border-slate-200 bg-slate-50 p-4" aria-label={`Progreso del roadmap en ${levelLabel}`}>
+  <div class="mb-2 flex items-center justify-between text-sm">
+    <strong class="text-slate-800">Progreso en la ruta</strong>
+    <span class="text-slate-600">Nivel {current} de {total} · {percent}%</span>
+  </div>
+  <div class="h-2 w-full overflow-hidden rounded-full bg-slate-200" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={percent} aria-label={`Progreso ${percent}%`}>
+    <div class="h-2 rounded-full bg-indigo-500" style={`width: ${percent}%`}></div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+---
+title: "Dashboard de métricas de adopción"
+description: Indicadores operativos para seguimiento de avance del roadmap y sus tracks.
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Objetivo
+
+Este dashboard define métricas mínimas para medir si el roadmap está mejorando retención, progreso y calidad percibida.
+
+## KPIs sugeridos (mensual)
+
+<CardGrid>
+  <Card title="Retención N3→N5" icon="star">
+    **Meta:** +15% en 90 días.
+    **Fórmula:** estudiantes que inician N3 y completan N5 / estudiantes que inician N3.
+  </Card>
+  <Card title="Finalización por nivel" icon="open-book">
+    **Meta:** >70% en N0–N2 y >55% en N3–N5.
+    **Fórmula:** nivel completado / nivel iniciado.
+  </Card>
+  <Card title="Tiempo hasta completar N5" icon="clock">
+    **Meta:** mediana ≤ 26 semanas.
+    **Fórmula:** fecha de finalización N5 - fecha de inicio N0.
+  </Card>
+  <Card title="Calidad percibida" icon="heart">
+    **Meta:** puntuación media ≥ 4.2/5.
+    **Fórmula:** encuesta post-nivel (claridad, dificultad, utilidad).
+  </Card>
+</CardGrid>
+
+## Instrumentación mínima
+
+1. Evento `level_started` y `level_completed` por cada nivel.
+2. Evento `track_selected` para Backend/Entrevistas/Enterprise.
+3. Evento `exercise_submitted` para medir engagement de práctica.
+4. Encuesta breve al finalizar cada nivel (3–5 preguntas).
+
+## Frecuencia de revisión
+
+- **Semanal:** alertas de caída de finalización.
+- **Mensual:** revisión de KPIs y ajustes de contenido.
+- **Trimestral:** evaluación de tracks y actualización de roadmap.
+
+## Acciones recomendadas por umbral
+
+- Si retención N3→N5 baja de 45%: reforzar ejemplos guiados y ejercicios de transición.
+- Si duración media sube de 30 semanas: simplificar carga de N3/N4 y priorizar núcleo.
+- Si calidad percibida cae por debajo de 3.8/5: revisar redacción, claridad de objetivos y dificultad.

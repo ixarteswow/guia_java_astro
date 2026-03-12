@@ -10,7 +10,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [starlight({
       title: 'Java Deep Mastery Roadmap 2025',
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/tu-usuario/java-roadmap' }], // Placeholder
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/guia-java-astro/guia_java_astro' }], // Placeholder
       sidebar: [
           {
               label: 'Nivel 0: Preparación',
@@ -35,6 +35,18 @@ export default defineConfig({
           {
               label: 'Nivel 5: Ecosistema',
               autogenerate: { directory: '05-nivel-cinco' },
+          },
+          {
+              label: 'Fase 5: Tracks',
+              autogenerate: { directory: '06-tracks' },
+          },
+          {
+              label: 'Changelog Pedagógico',
+              link: '/changelog-pedagogico/',
+          },
+          {
+              label: 'Métricas de Adopción',
+              link: '/metricas-adopcion/',
           },
       ],
       customCss: [

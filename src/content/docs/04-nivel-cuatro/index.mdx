@@ -5,6 +5,7 @@ description: Java 8 hasta Java 21+. Programación Funcional.
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -18,9 +19,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Características nuevas: Records, Switch Expressions, Var.
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["Nueva Sintaxis", "Refactorización", "Teoría"]} dataPoints={[50, 40, 10]} />
+    <PhaseChart client:only="react" labels={["Nueva Sintaxis", "Refactorización", "Teoría"]} dataPoints={[50, 40, 10]} description="Distribución de esfuerzo en Nivel 4: 50% nueva sintaxis, 40% refactorización y 10% teoría." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={4} total={5} levelLabel="Nivel 4" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 4 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -46,10 +54,62 @@ Records (DTOs inmutables en 1 línea), Pattern Matching para instanceof, Text Bl
 
 ---
 
+## Criterios de salida
+
+- Refactorizas código imperativo simple a lambdas/streams con legibilidad.
+- Usas `Optional` sin convertirlo en sobreingeniería.
+- Reconoces novedades modernas (records, switch expressions, pattern matching).
+- Tomas decisiones pragmáticas entre estilo funcional y bucles tradicionales.
+
+## Autoevaluación rápida
+
+1. ¿Qué es una interfaz funcional y por qué importa en lambdas?
+2. ¿Cuándo un stream empeora la legibilidad?
+3. ¿Qué diferencia hay entre `map` y `flatMap` (conceptualmente)?
+4. ¿Qué ventaja ofrecen los records para DTOs?
+5. ¿Cómo evitarías `NullPointerException` sin abusar de `Optional`?
+
 ## Práctica Obligatoria
 
-<PracticeItem type="Refactor" text="Toma el proyecto 'Analizador de Texto' del Nivel 3 y reescríbelo usando Streams y Lambdas. Intenta eliminar bucles for explícitos." />
-<PracticeItem type="Ejercicio" text="Filtra una lista de Empleados: Encuentra los que ganan > 2000, incrementa su salario 10% y agrúpalos por departamento." />
+<PracticeItem type="Refactor" text="[Intermedio] Toma el proyecto 'Analizador de Texto' del Nivel 3 y reescríbelo usando Streams y Lambdas. Intenta eliminar bucles for explícitos." />
+<PracticeItem type="Ejercicio" text="[Básico] Filtra una lista de Empleados: Encuentra los que ganan > 2000, incrementa su salario 10% y agrúpalos por departamento." />
+
+## Estudios de caso (Nivel 4)
+
+### Caso 1: Refactor de bucles a Streams
+**Escenario:** filtrar empleados activos, mapear nombres y ordenar alfabéticamente.
+
+- Imperativo: más líneas, control explícito.
+- Stream: `filter -> map -> sorted -> toList`, más declarativo.
+- **Regla práctica:** usa streams cuando la tubería sea legible de izquierda a derecha.
+
+### Caso 2: Cuándo NO usar Streams
+**Escenario:** algoritmo con estado mutable complejo y múltiples condiciones cruzadas.
+
+- Un stream excesivamente encadenado puede ocultar intención y dificultar debug.
+- Un `for` claro con variables bien nombradas puede ser más mantenible.
+- **Decisión profesional:** prioriza legibilidad del equipo sobre “elegancia funcional”.
+
+## Mini-proyecto guiado
+
+### Motor de Reportes con Streams
+Refactoriza un módulo que procesa ventas:
+
+1. Cargar lista de ventas (cliente, región, monto, fecha).
+2. Filtrar ventas del mes actual.
+3. Agrupar por región (`Collectors.groupingBy`).
+4. Calcular total por región (`summingDouble`).
+5. Obtener top 3 clientes por facturación.
+6. Reemplazar chequeos nulos por `Optional` en puntos críticos.
+
+**Criterios de buena solución:** pipeline legible, funciones pequeñas reutilizables y tests para transformaciones.
+
+## Errores comunes (y cómo evitarlos)
+
+- Encadenar streams demasiado largos → extrae pasos a métodos con nombre.
+- Usar `Optional` en todos lados (incluyendo campos) sin criterio → úsalo en fronteras y retornos.
+- Abusar de `parallelStream()` sin benchmark → primero mide, luego paraleliza.
+- Ignorar coste de boxing/unboxing en pipelines intensivos.
 
 ## Recursos
 
@@ -65,3 +125,8 @@ Records (DTOs inmutables en 1 línea), Pattern Matching para instanceof, Text Bl
 :::tip[Consejo de Asimilación]
 No abuses de los Streams. Si el stream es ilegible o muy complejo, un bucle `for` tradicional sigue siendo válido y a veces más rápido.
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/05-nivel-cinco/" variant="primary" icon="right-arrow">Continuar al Nivel 5: Ecosistema</LinkButton>

@@ -5,6 +5,7 @@ description: Herramientas y Próximos Pasos. Maven, Git, Testing.
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -18,9 +19,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Git básico para control de versiones.
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["Código", "Herramientas", "Procesos"]} dataPoints={[10, 40, 50]} />
+    <PhaseChart client:only="react" labels={["Código", "Herramientas", "Procesos"]} dataPoints={[10, 40, 50]} description="Distribución de esfuerzo en Nivel 5: 10% código, 40% herramientas y 50% procesos." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={5} total={5} levelLabel="Nivel 5" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 4 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -41,10 +49,62 @@ Commit, Push, Pull, Branching básico. Subir tu portafolio.
 
 ---
 
+## Criterios de salida
+
+- Configuras un proyecto Java con Maven o Gradle y dependencias de testing.
+- Escribes pruebas unitarias útiles con JUnit (y dobles de prueba básicos).
+- Usas Git en flujo diario: ramas, commits claros y merge/pull request.
+- Puedes entregar un proyecto pequeño con README y estructura profesional.
+
+## Autoevaluación rápida
+
+1. ¿Qué diferencia hay entre test unitario, integración y e2e?
+2. ¿Qué debe incluir un `pom.xml` mínimo para compilar y testear?
+3. ¿Cómo organizarías commits para una feature mediana?
+4. ¿Cuándo usarías Mockito y cuándo no?
+5. ¿Qué criterios mínimos debe cumplir tu proyecto final para portfolio?
+
 ## Práctica Obligatoria
 
-<PracticeItem type="Proyecto Final" text="API de Gestión de Tareas (Consola o Web simple): Usa Maven, JUnit para tests, guarda datos en JSON, usa Java moderno. Súbelo a GitHub con un README decente." />
+<PracticeItem type="Proyecto Final" text="[Avanzado] API de Gestión de Tareas (Consola o Web simple): Usa Maven, JUnit para tests, guarda datos en JSON, usa Java moderno. Súbelo a GitHub con un README decente." />
 <PracticeItem type="Siguiente Paso" text="Una vez domines esto, salta a Spring Boot o Bases de Datos (JDBC/Hibernate)." />
+
+## Estudios de caso (Nivel 5)
+
+### Caso 1: Maven + JUnit en proyecto real pequeño
+**Escenario:** API de tareas con capas (`domain`, `service`, `infra`).
+
+- Maven centraliza dependencias, plugins y ciclo de build.
+- JUnit valida reglas de negocio sin levantar toda la app.
+- **Resultado esperado:** build reproducible y suite de tests rápida.
+
+### Caso 2: Estrategia de ramas para equipo pequeño
+**Escenario:** 2-3 desarrolladores colaboran en features semanales.
+
+- `main` protegida + ramas `feature/*` + PR obligatoria.
+- Commits atómicos con mensajes claros (`feat:`, `fix:`, `test:`).
+- **Beneficio:** historial limpio y menor riesgo de romper producción.
+
+## Mini-proyecto guiado
+
+### API de Tareas “portfolio-ready”
+Implementa una app (consola o web simple) con enfoque profesional:
+
+1. Inicializa proyecto con Maven/Gradle.
+2. Modela entidad `Task` y casos de uso CRUD.
+3. Persistencia simple en JSON.
+4. Pruebas unitarias para reglas clave (estado, validaciones, filtros).
+5. README con instalación, ejecución, tests y decisiones técnicas.
+6. Flujo Git: al menos 1 feature branch + 1 PR documentada.
+
+**Criterios de buena solución:** cobertura de casos críticos, estructura clara, README útil y trazabilidad en Git.
+
+## Errores comunes (y cómo evitarlos)
+
+- Mezclar lógica de negocio y acceso a datos en una sola clase.
+- Escribir tests frágiles acoplados a implementación interna.
+- Commits grandes “todo en uno” difíciles de revisar.
+- README mínimo sin instrucciones reproducibles.
 
 ## Recursos
 
@@ -60,3 +120,8 @@ Commit, Push, Pull, Branching básico. Subir tu portafolio.
 :::tip[Consejo de Asimilación]
 Un portafolio con 2 proyectos bien testeados y documentados vale más que 20 scripts sueltos sin terminar.
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/06-tracks/" variant="primary" icon="right-arrow">Elegir un track de especialización</LinkButton>

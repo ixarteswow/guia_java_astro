@@ -5,6 +5,7 @@ description: Herramientas Profesionales. Excepciones, Collections, Generics.
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -18,9 +19,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Entender Genéricos y manejo de archivos.
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["API Conocimiento", "Algoritmos/Estructuras", "Teoría"]} dataPoints={[30, 50, 20]} />
+    <PhaseChart client:only="react" labels={["API Conocimiento", "Algoritmos/Estructuras", "Teoría"]} dataPoints={[30, 50, 20]} description="Distribución de esfuerzo en Nivel 3: 30% conocimiento de APIs, 50% algoritmos/estructuras y 20% teoría." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={3} total={5} levelLabel="Nivel 3" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 5 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -46,10 +54,61 @@ Leer y escribir archivos. Path, Files. Manejo de streams de datos.
 
 ---
 
+## Criterios de salida
+
+- Manejas excepciones con criterio (checked/unchecked y `try-with-resources`).
+- Seleccionas estructuras de `Collections` según acceso, orden y complejidad.
+- Usas genéricos para evitar castings inseguros.
+- Persistes/lees datos simples desde archivos con APIs modernas de Java.
+
+## Autoevaluación rápida
+
+1. ¿Cuándo crearías una excepción personalizada?
+2. ¿Qué diferencias clave hay entre `ArrayList`, `LinkedList` y `HashSet`?
+3. ¿Qué evita `List<String>` frente a `List` sin tipo?
+4. ¿Qué ventajas tiene `try-with-resources`?
+5. ¿Cómo contarías frecuencia de palabras de un archivo grande eficientemente?
+
 ## Práctica Obligatoria
 
-<PracticeItem type="Proyecto" text="Analizador de Texto: Lee un archivo .txt grande, cuenta la frecuencia de cada palabra usando un HashMap y exporta el top 10 a un CSV." />
-<PracticeItem type="Reto" text="Implementa una 'ToDo List' que guarde las tareas en un archivo para que persistan al cerrar el programa." />
+<PracticeItem type="Proyecto" text="[Intermedio] Analizador de Texto: Lee un archivo .txt grande, cuenta la frecuencia de cada palabra usando un HashMap y exporta el top 10 a un CSV." />
+<PracticeItem type="Reto" text="[Avanzado] Implementa una 'ToDo List' que guarde las tareas en un archivo para que persistan al cerrar el programa." />
+
+## Estudios de caso (Nivel 3)
+
+### Caso 1: `ArrayList` vs `LinkedList` en lista de tareas
+**Escenario:** una app de tareas inserta al final, recorre mucho y casi nunca inserta en medio.
+
+- `ArrayList` suele ser mejor por localidad de memoria y acceso aleatorio O(1).
+- `LinkedList` solo gana si hay muchas inserciones/eliminaciones internas con iteradores ya posicionados.
+- **Decisión recomendada:** empezar con `ArrayList` y medir antes de optimizar.
+
+### Caso 2: `HashMap` vs `TreeMap` en ranking de palabras
+**Escenario:** contar frecuencia de palabras de un `.txt` y exportar top resultados.
+
+- `HashMap`: inserción/consulta promedio O(1), ideal para conteo masivo.
+- `TreeMap`: mantiene orden natural O(log n), útil si necesitas salida ordenada por clave.
+- **Estrategia práctica:** contar con `HashMap` y ordenar al final solo para presentación.
+
+## Mini-proyecto guiado
+
+### Analizador de Logs Java
+Construye una herramienta CLI que lea un archivo de logs y genere un resumen:
+
+1. Leer archivo con `Files.lines(Path)` y `try-with-resources`.
+2. Parsear severidad (`INFO`, `WARN`, `ERROR`) y timestamp.
+3. Contar ocurrencias por severidad con `Map<String, Integer>`.
+4. Exportar resumen a CSV (`severidad,total`).
+5. Manejar errores con excepción personalizada (`LogFormatException`).
+
+**Criterios de buena solución:** código desacoplado (parser/servicio/exportador), manejo correcto de excepciones y tests de parseo.
+
+## Errores comunes (y cómo evitarlos)
+
+- Capturar `Exception` genérica para todo → captura lo específico primero.
+- Usar `LinkedList` por “intuición” sin medir → elige estructura por patrón de acceso.
+- Ignorar genéricos (`List` en crudo) → usa tipos parametrizados para evitar errores en runtime.
+- Leer archivos sin cerrar recursos → usa `try-with-resources` siempre.
 
 ## Recursos
 
@@ -65,3 +124,8 @@ Leer y escribir archivos. Path, Files. Manejo de streams de datos.
 :::tip[Consejo de Asimilación]
 Aprende de memoria la jerarquía de Collections. En entrevistas te preguntarán: '¿Diferencia entre HashMap y HashTable?' o '¿Cuándo usar LinkedList?'.
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/04-nivel-cuatro/" variant="primary" icon="right-arrow">Continuar al Nivel 4: Java Moderno</LinkButton>

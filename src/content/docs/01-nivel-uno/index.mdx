@@ -5,6 +5,7 @@ description: La sintaxis y el control de flujo. Memoria muscular.
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -19,9 +20,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Introducción a Arrays y Strings.
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["Sintaxis & Reglas", "Resolución Problemas", "Teoría"]} dataPoints={[60, 30, 10]} />
+    <PhaseChart client:only="react" labels={["Sintaxis & Reglas", "Resolución Problemas", "Teoría"]} dataPoints={[60, 30, 10]} description="Distribución de esfuerzo en Nivel 1: 60% sintaxis, 30% resolución de problemas y 10% teoría." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={1} total={5} levelLabel="Nivel 1" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 4 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -47,6 +55,21 @@ Declaración, parámetros, tipo de retorno, paso por valor (Pass-by-value).
 
 ---
 
+## Criterios de salida
+
+- Escribes programas pequeños usando variables, operadores, condicionales y bucles sin errores frecuentes.
+- Distingues tipos primitivos vs referencias y aplicas casting cuando corresponde.
+- Resuelves problemas básicos con arrays, strings y métodos.
+- Puedes leer código ajeno y explicar su flujo de ejecución.
+
+## Autoevaluación rápida
+
+1. ¿Cuándo usarías `double` en lugar de `int`?
+2. ¿Qué diferencia hay entre `==` y `.equals()` en strings?
+3. ¿Qué es el scope de una variable y por qué importa?
+4. Resuelve mentalmente: recorrer un array y devolver el mayor.
+5. ¿En qué caso usarías `while` y en cuál `for`?
+
 ## Práctica Obligatoria
 
 <PracticeItem type="Ejercicio" text="Calculadora de IMC: Recibe peso/altura y devuelve estado de salud." />
@@ -71,3 +94,8 @@ Declaración, parámetros, tipo de retorno, paso por valor (Pass-by-value).
 :::tip[Consejo de Asimilación]
 Explícale a un patito de goma (Rubber Duck Debugging) cómo funciona un bucle for. Si no puedes explicarlo paso a paso, no lo entiendes.
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/02-nivel-dos/" variant="primary" icon="right-arrow">Continuar al Nivel 2: POO</LinkButton>

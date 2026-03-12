@@ -5,6 +5,7 @@ description: Antes de escribir una línea de código. Configuración y mentalida
 
 import PhaseChart from '../../../components/PhaseChart.jsx';
 import PracticeItem from '../../../components/PracticeItem.astro';
+import StudyProgress from '../../../components/StudyProgress.astro';
 import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mb-6 text-sm">
@@ -18,9 +19,16 @@ import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 *   ✅ Comprender la lógica algorítmica básica (diagramas de flujo, pseudocódigo).
 
 <div class="my-8">
-    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica", "Conceptos/Config"]} dataPoints={[20, 30, 50]} />
+    <PhaseChart client:only="react" labels={["Sintaxis", "Práctica", "Conceptos/Config"]} dataPoints={[20, 30, 50]} description="Distribución de esfuerzo en Nivel 0: 20% sintaxis, 30% práctica y 50% conceptos/configuración." />
     <p class="text-center text-xs text-slate-500 mt-2 font-bold uppercase">Distribución de Esfuerzo</p>
 </div>
+
+<StudyProgress current={0} total={5} levelLabel="Nivel 0" />
+
+## Tiempo sugerido
+
+- **Duración estimada:** 2 semanas.
+- **Ritmo recomendado:** 5 a 7 horas por semana distribuidas en 3 o 4 sesiones.
 
 ## Temas Principales
 
@@ -40,6 +48,21 @@ Variables, constantes, secuencias, decisiones y bucles en papel. No te saltes es
 </details>
 
 ---
+
+## Criterios de salida
+
+- Puedes explicar con tus palabras la diferencia entre **JDK, JRE y JVM**.
+- Tienes un entorno funcional y verificas Java desde terminal (`java -version`, `javac -version`).
+- Puedes compilar y ejecutar un `HelloWorld.java` sin depender del IDE.
+- Sabes traducir un problema cotidiano a pasos lógicos (pseudocódigo o flujo).
+
+## Autoevaluación rápida
+
+1. ¿Cuál es la diferencia práctica entre JDK y JRE?
+2. ¿Qué ocurre entre `javac Archivo.java` y `java Archivo`?
+3. ¿Qué variables de entorno suelen configurarse y para qué?
+4. Describe en 5 pasos cómo resolverías un problema antes de programar.
+5. ¿Qué error te apareció al ejecutar Java y cómo lo resolviste?
 
 ## Práctica Obligatoria
 
@@ -61,3 +84,8 @@ Variables, constantes, secuencias, decisiones y bucles en papel. No te saltes es
 :::tip[Consejo de Asimilación]
 Error común: Depender del botón 'Run' del IDE sin entender qué pasa detrás. Aprende a compilar desde la terminal al menos una vez.
 :::
+
+
+## Siguiente paso recomendado
+
+<LinkButton href="/01-nivel-uno/" variant="primary" icon="right-arrow">Continuar al Nivel 1: Fundamentos</LinkButton>

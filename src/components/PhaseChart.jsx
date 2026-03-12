@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PhaseChart = ({ labels, dataPoints }) => {
+const PhaseChart = ({ labels, dataPoints, description = 'Gráfico de distribución de esfuerzo por categoría.' }) => {
   const data = {
     labels: labels,
     datasets: [
@@ -24,21 +24,28 @@ const PhaseChart = ({ labels, dataPoints }) => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-        legend: {
-            position: 'bottom',
-            labels: {
-                usePointStyle: true,
-                boxWidth: 8
-            }
-        }
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          boxWidth: 8,
+        },
+      },
     },
     cutout: '70%',
   };
 
   return (
-    <div style={{ width: '100%', height: '300px', maxWidth: '400px', margin: '0 auto' }}>
-      <Doughnut data={data} options={options} />
-    </div>
+    <figure>
+      <div
+        style={{ width: '100%', height: '300px', maxWidth: '400px', margin: '0 auto' }}
+        role="img"
+        aria-label={description}
+      >
+        <Doughnut data={data} options={options} />
+      </div>
+      <figcaption className="sr-only">{description}</figcaption>
+    </figure>
   );
 };
 
